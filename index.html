@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="x-icon" href="img/icon.png">
+    <title>Adarsh's Portfolio</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo"><img src="img/Pro.png" alt=""></a>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+    <section class="home" id="home">
+        <div class="max-width">
+            <div class="home-content">
+                <div class="text-1"><span style="font-size: 35px;">Hello,👋</span> My Name is</div>
+                <div class="text-2">Adarsh Agrahari</div>
+                <div class="text-3">And I'm a <span class="typing"></span></div>
+            </div>
+        </div>
+        <img src="img/mountBg.png" id="mountBg">
+        <img src="img/mountFg.png" id="mountFg" />
+        <img src="img/mountMg.png" id="mountMg" />
+        <img src="img/cloud1.png" id="cloud1" />
+        <img src="img/cloud2.png" id="cloud2" />
+        <img src="img/cloud3.png" id="cloud3" />
+    </section>
+    <div class="sec" id="sec">
+        <!-- <h2>There are my Projects</h2>
+        <p>
+        <div class="xyz">1. Automatic Color Picker</div><a href="jsp/project1.html" class="btn btn-hero">click me</a>
+        </p>
+        <p>
+        <div class="xyz">2. Lamp project</div><a href="lamp/lamp.html" class="btn btn-hero">click me</a></p> -->
+        <ul>
+            <li><a href="https://www.facebook.com/adarsh.agrahari.902266"><ion-icon name="logo-facebook">"></a></li>
+            <li><a href="https://www.linkedin.com/in/adarsh-agrahari/"><ion-icon name="logo-linkedin"></a></li>
+            <li><a href="https://www.instagram.com/_adarsh_agrahari/"><ion-icon name="logo-instagram"></a></li>
+            <li><a href="https://twitter.com/Adarsh_050303"><ion-icon name="logo-twitter"></a></li>
+            <li><a href="https://github.com/Adarsh-Agrahari"><ion-icon name="logo-github"></a></li>
+            <div id="marker"></div>
+        </ul>
+    </div>
+    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        let marker = document.querySelector('#marker');
+        let list = document.querySelectorAll('ul li');
+
+        function moveIndicator(e){
+            marker.style.left = e.offsetLeft+'px';
+            marker.style.width = e.offsetWidth+'px';
+        }
+        list.forEach(Link => {
+            Link.addEventListener('mousemove', (e) => {
+                moveIndicator(e.target);
+            })
+        })
+
+        //add active class in hovered list item  
+        function activeLink(){
+            list.forEach((item) =>
+            item.classList.remove('active'));
+            this.classList.add('active');
+        }
+
+        list.forEach((item)=>
+        item.addEventListener('mouseover',activeLink));
+    </script>
+    <script>
+        let mountBg = document.getElementById('mountBg');
+        let mountFg = document.getElementById('mountFg');
+        let mountMg = document.getElementById('mountMg');
+        let cloud1 = document.getElementById('cloud1');
+        let cloud2 = document.getElementById('cloud2');
+        let cloud3 = document.getElementById('cloud3');
+        let btn = document.getElementById('btn');
+        let header = document.querySelector('header');
+        window.addEventListener('scroll', function () {
+            let value = window.scrollY;
+            cloud1.style.left = value * -0.75 + 'px';
+            cloud2.style.left = value * 0.75 + 'px';
+            cloud3.style.left = value * 0.75 + 'px';
+            mountBg.style.top = value * 0.5 + 'px';
+        })
+    </script>
+    <script >
+        var typed = new Typed(".typing", {
+        strings: ["B.Tech CSE AIML Student"],
+        typeSpeed: 100,
+        backSpeed: 60,
+        loop: true
+    });
+    </script>
+</body>
+
+</html>
